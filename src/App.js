@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import ButtonGrid  from './drum/button_grid.js';
+import Controls from './drum/controls.js';
 import './App.css';
+import { useState } from 'react';
+import Screen from './drum/digital-screen.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () =>{
+
+  const [power, setPower] = useState(true);
+  const [volume, setVolume] = useState(50);
+  const [text, setText] = useState('on');
+
+  return(
+  <>
+  
+  <div className="container" id="drum-machine">
+    <div className="main-container">
+      <div className="container1">
+        <ButtonGrid power={power} volume={volume} setText={setText} />
+      </div>
+      <div className="container2">
+        <Controls power={power} setPower={setPower} volume={volume} setVolume={setVolume} setText={setText}/>
+        <Screen text={text} />
+      </div>
     </div>
-  );
+  </div>
+  <footer className='footer'>
+  <p>This drum machin was desined and coded by <a href='https://github.com/ArafatQz'><b>Arafat Gamzawe</b></a></p>
+</footer>
+</>
+);
 }
-
 export default App;

@@ -1,0 +1,215 @@
+@font-face {
+  font-family: 'Digital-7';
+  src: url('../digital-7.ttf') format('truetype'); /* Adjust the path to the font file */
+  /* Add additional src entries for different font formats if needed */
+}
+
+/* Apply the Digital-7 font family to specific elements */
+.digital-text {
+  font-family: 'Digital-7', sans-serif; /* Fallback to a sans-serif font if Digital-7 is not available */
+  /* Add additional styling as needed */
+}
+
+body {
+  background-color: rgb(212, 211, 211);
+}
+.controls{
+  width: 150px;
+}
+.container2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tri {
+          
+          display: flex;
+          justify-content: center;
+          width: 300px;
+          gap: 3px;
+          margin: auto;
+        }
+        
+        /* Override Bootstrap styles with  */
+.bttn {
+          display: flex ;
+          align-items: center ;
+          justify-content: center ;
+          width: 5em ;
+          height: 5em ;
+          background-color: #171717 ;
+          border-radius: 5px ;
+          margin: 1px ;
+        }
+        
+        
+        .buttton {
+          width: 5.7em;
+          height: 5.7em;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          background-color: #c7c3c0;
+          box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px,
+            #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -3.2px -3.2px 8px 0px inset;
+          cursor: pointer;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          transition: 0.1s ease-in-out;
+          
+        }
+        
+        .buttton:active {
+          box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+            #c7c3c0 -3.2px -3.2px 8px 0px inset ;
+        }
+        
+        .active {
+          box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+            #c7c3c0 -3.2px -3.2px 8px 0px inset ;
+        }
+        .slider {
+          /* slider */
+          --slider-width: 100%;
+          --slider-height: 6px;
+          --slider-bg: rgba(50, 49, 49, 0.598);
+          --slider-border-radius: 999px;
+          /* level */
+          --level-color: #e98521dc;
+          --level-transition-duration: .1s;
+          /* icon */
+          --icon-margin: 15px;
+          --icon-color: var(--slider-bg);
+          --icon-size: 25px;
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
+        
+        .slider {
+          cursor: pointer;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: reverse;
+          -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        
+        .slider .volume {
+          display: inline-block;
+          vertical-align: top;
+          margin-right: var(--icon-margin);
+          color: var(--icon-color);
+          width: var(--icon-size);
+          height: auto;
+        }
+        
+        .slider .level {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: var(--slider-width);
+          height: var(--slider-height);
+          background: var(--slider-bg);
+          overflow: hidden;
+          border-radius: var(--slider-border-radius);
+          -webkit-transition: height var(--level-transition-duration);
+          -o-transition: height var(--level-transition-duration);
+          transition: height var(--level-transition-duration);
+          cursor: inherit;
+        }
+        
+        .slider .level::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 0;
+          height: 0;
+          -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+          box-shadow: -200px 0 0 200px var(--level-color);
+        }
+        
+        .slider:hover .level {
+          height: calc(var(--slider-height) * 2);
+        }
+        
+        .checkbox-wrapper-25 input[type="checkbox"] {
+          background-image: -webkit-linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,100%,.1)),
+                              -webkit-linear-gradient(left,  rgb(236, 139, 48) 50%,  rgba(242, 242, 242, 0.609) 50%);
+          background-size: 100% 100%, 200% 100%;
+          background-position: 0 0, 15px 0;
+          border-radius: 25px;
+          box-shadow: inset 0 1px 4px hsla(0,0%,0%,.5),
+                        inset 0 0 10px hsla(0,0%,0%,.5),
+                        0 0 0 1px hsla(0,0%,0%,.1),
+                        0 -1px 2px 2px hsla(0,0%,0%,.25),
+                        0 2px 2px 2px hsla(0,0%,100%,.75);
+          cursor: pointer;
+          height: 25px;
+          padding-right: 25px;
+          width: 75px;
+          -webkit-appearance: none;
+          -webkit-transition: .25s;
+          margin-left: 40px;
+        }
+        
+        .checkbox-wrapper-25 input[type="checkbox"]:after {
+          background-color: #c0bfbf;
+          background-image: -webkit-linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+          border-radius: 25px;
+          box-shadow: inset 0 1px 1px 1px hsla(0,0%,100%,1),
+                        inset 0 -1px 1px 1px hsla(0,0%,0%,.25),
+                        0 1px 3px 1px hsla(0,0%,0%,.5),
+                        0 0 2px hsla(0,0%,0%,.25);
+          content: 'I|O';
+          display: block;
+          height: 25px;
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: fantasy;
+          font-size: 10px;
+        }
+        
+        .checkbox-wrapper-25 input[type="checkbox"]:checked {
+          background-position: 0 0, 35px 0;
+          padding-left: 25px;
+          padding-right: 0;
+        }
+        
+    .border{
+      border: solid 1px blue;
+    }
+    .border-main{ 
+      border: solid 5px green;
+    }
+    .mini-screen{
+      background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(223, 219, 210),  rgba(157, 148, 126, 0.49));
+      width: 80px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      box-shadow: 
+      inset 1px 1px 1px 1px rgba(0, 0, 0, 0.7);
+      border-radius: 2px;
+      border: solid 0.5px #7e7d7d;
+    }
+    
+    .screen-content{
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .text{
+      font-family: 'Digital-7';
+    }
+
+    
+    
