@@ -25,7 +25,7 @@ const App = () =>{
     </div>
   </div>
   <footer className='footer'>
-  <p>This drum machin was desined and coded by <a href='https://github.com/ArafatQz'><b>Arafat Gamzawe</b></a></p>
+  <p>This drum machin was designed and coded by <a href='https://github.com/ArafatQz'><b>Arafat Gamzawe</b></a></p>
 </footer>
 </>
 );
