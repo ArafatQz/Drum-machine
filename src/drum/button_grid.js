@@ -54,24 +54,33 @@ const ButtonGrid = ({ setText, power, volume }) => {
     const audioElement = document.getElementById(key);
     
     if (audioElement && power) {
+      audioElement.pause();
       audioElement.currentTime = 0;
-      audioElement.volume = volume / 100; 
-      audioElement.play().catch(error => {
-        console.error("Audio playback failed: ", error);});
-      
-      if (setText) {
-        setText(id);
+      audioElement.volume = volume / 100;
+      const playPromise = audioElement.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            if (setText) {
+              setText(id);
+            }
+          })
+          .catch(error => {
+            console.error("Playback failed:", error);
+          });
       }
     }
-  }, [power, volume, setText])
+  }, [power, setText, volume]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
       const pad = drumPads.find((p) => p.key === e.key.toUpperCase());
       if (pad) {
-        if(power) {playSound(pad.key, pad.id);}
-        
-        
+        if (power) {
+          playSound(pad.key, pad.id);
+        }
+
         const button = document.getElementById(pad.id);
         if (button) {
           button.classList.add("active");
@@ -81,7 +90,7 @@ const ButtonGrid = ({ setText, power, volume }) => {
         }
       }
     };
-  
+
     document.addEventListener("keydown", handleKeyPress);
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
