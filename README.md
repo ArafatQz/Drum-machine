@@ -139,7 +139,7 @@ This project is licensed under the [MIT License].
 
 ## 🙏 Acknowledgements
 
-- [**React**](https://reactjs.org/) – For its powerful and flexible UI capabilities.
+
 - [**FreeCodeCamp Audio**](https://www.freecodecamp.org) – For providing accessible drum sound samples.
 
 ---
